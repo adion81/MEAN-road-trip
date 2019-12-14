@@ -1,0 +1,10 @@
+<div  *ngIf="allCities">
+    <div class="city"*ngFor="let city of allCities" >
+        <h2>{{city.name}}</h2>
+        <img src="../../assets/img/{{city.imageUrl}}" alt={{city.name}}>
+        <p>{{city.description}}</p>
+        <p>ByPass: {{city.bypass}} miles</p>
+        <p>North: {{city.north}} miles</p>
+        <p>South: {{city.south}} miles</p>
+    </div>
+</div>

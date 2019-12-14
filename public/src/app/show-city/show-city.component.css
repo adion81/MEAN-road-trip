@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+
+.city{
+    width: 400px;
+    border: 1px solid lime;
+    display: inline-block;
+    white-space: normal;
+    margin: 10px;
+    padding: 5px;
+}
+.city img{
+    width: 40%;
+}

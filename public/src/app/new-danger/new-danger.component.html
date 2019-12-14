@@ -1,0 +1,32 @@
+<div class="bg-light" >
+
+    <h3>Create New Danger</h3>
+    <form (submit)="createDanger()">
+        <div class="form-group">
+            <label>Class: </label>
+            <select name="class" class="form-control" [(ngModel)]="newDanger.class">
+                <option value="city">City</option>
+                <option value="road">Road</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Description: </label>
+            <textarea class="form-control" name="description" cols="30" rows="5" [(ngModel)]="newCity.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Bypass: </label>
+            <input class="form-control" type="number" min="0" name="bypass" [(ngModel)]="newCity.bypass">
+        </div>
+        <div class="form-group">
+            <label>North: </label>
+            <input class="form-control" type="number" min="0" name="north" [(ngModel)]="newCity.north">
+        </div>
+        <div class="form-group">
+            <label>South: </label>
+            <input class="form-control" type="number" min="0" name="south" [(ngModel)]="newCity.south">
+        </div>
+        <div class="form-group">
+            <input class="btn" type="submit" value="Create City">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+
+<div *ngIf="loggedIn; else notLoggedIn">
+    <h2>Welcome Adrien!</h2>
+    <button (click)="displayCityForm()">Create City</button>
+    <button (click)="displayDangerForm()">Danger Form</button>
+    <div class="forms">
+        <app-new-city *ngIf="cityForm" (refresh)="updateCities($event)"></app-new-city>
+        <app-new-danger *ngIf="dangerForm"></app-new-danger>
+
+    </div>
+    <app-show-city></app-show-city>
+    <app-show-danger></app-show-danger>
+</div>
+
+<ng-template #notLoggedIn >
+    <form (submit)="adminLoggin()">
+        <input type="text" name="answer" [(ngModel)]="answer">
+        <input type="submit" value="PUSH">
+    </form>
+
+</ng-template>
+

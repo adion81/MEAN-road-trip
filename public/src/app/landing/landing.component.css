@@ -1,0 +1,30 @@
+#landing{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 90% 5px 10%;
+}
+
+button{
+    width: 150px;
+    padding: 10px;
+    border: 2px solid orange;
+    grid-row: 3;
+    grid-column: 2;
+    margin: 0 auto;
+    
+}
+button:hover{
+    transition: .3s;
+    border: 2px solid lime;
+    background-color: orange;
+    color: black;
+    border: 2px solid black;
+}
+img{
+    border: 3px solid lime;
+    grid-row:1;
+    grid-column: 2;
+    width: 100%;
+}
