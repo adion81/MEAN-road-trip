@@ -19,8 +19,10 @@ export class NewCityComponent implements OnInit {
       imageUrl: '',
       bypass: 0,
       north: 0,
-      south: 0
+      south: 0,
+      listNumber: 0o1
     }
+    console.log(this.newCity.listNumber)
   }
 
   createCityToService(){
@@ -33,8 +35,11 @@ export class NewCityComponent implements OnInit {
           imageUrl: '',
           bypass: 0,
           north: 0,
-          south: 0
+          south: 0,
+          listNumber: 0,
+          trip: ''
         }
+        
         this.refresh.emit("refresh");
       }
     })

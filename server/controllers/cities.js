@@ -7,6 +7,11 @@ module.exports = {
             .then(result => res.json({ results: result}))
             .catch(err => res.json({errors: err.errors}));
     },
+    selected: (req,res) => {
+        City.find({trip: req.params.cityKey}).sort({listNumber: 1})
+            .then(result => res.json({ results: result}))
+            .catch(err => res.json({errors: err.errors}));
+    },
     show: (req, res) => {
         City.findOne({_id: req.params.id})
         .then(result => res.json({results: result}))

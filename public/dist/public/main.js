@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n\n    </div>\n    <app-show-city></app-show-city>\n    <app-show-danger></app-show-danger>\n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <button (click)=\"changeKey('Eastern-Seaboard')\">Eastern-Seaboard Trip</button>\n    <button (click)=\"changeKey('')\">Get All Cities</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n        <app-edit-city *ngIf=\"editCityId\" [cityId]=\"editCityId\"></app-edit-city>\n        <app-edit-danger *ngIf=\"editDangerId\" [dangerId]=\"editDangerId\"></app-edit-danger>\n\n    </div>\n    <app-show-city (cityId)=\"getEditCity($event)\" [cityKey]=\"cityKey\"></app-show-city>\n    <app-show-danger></app-show-danger>\n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>edit-city works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" *ngIf=\"editCity\" >\n\n    <h3>Edit {{editCity.name}}</h3>\n    <form (submit)=\"updateCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"editCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"editCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"editCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"editCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"editCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"editCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"editCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"editCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New City</h3>\n    <form (submit)=\"createCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"newCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"newCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"newCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"newCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"newCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New City</h3>\n    <form (submit)=\"createCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"newCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"newCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"newCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"newCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"newCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"newCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"newCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div  *ngIf=\"allCities\">\n    <div class=\"city\"*ngFor=\"let city of allCities\" >\n        <h2>{{city.name}}</h2>\n        <img src=\"../../assets/img/{{city.imageUrl}}\" alt={{city.name}}>\n        <p>{{city.description}}</p>\n        <p>ByPass: {{city.bypass}} miles</p>\n        <p>North: {{city.north}} miles</p>\n        <p>South: {{city.south}} miles</p>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div  *ngIf=\"allCities\">\n    <div class=\"city\"*ngFor=\"let city of allCities\" >\n        <p>{{ city.trip }} || #{{city.listNumber}}</p>\n        <h2>{{city.name}}</h2>\n        <img (click)=\"sendEditId(city._id)\" src=\"../../assets/img/{{city.imageUrl}}\" alt={{city.name}}>\n        <p>{{city.description}}</p>\n        <p>ByPass: {{city.bypass}} miles</p>\n        <p>North: {{city.north}} miles</p>\n        <p>South: {{city.south}} miles</p>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -378,7 +378,7 @@ function __importDefault(mod) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    vertical-align: top;\n    box-sizing: border-box;\n}\napp-new-city, app-new-danger{\n    display: inline-block;\n    width: 400px;\n    max-height: 300px;\n    overflow-y: scroll;\n    padding: 10px;\n    border: 2px dotted orange;\n    margin: 0 10px;\n}\napp-show-city, app-show-danger{\n    display: block;\n    width: 95%;\n    max-height: 500px;\n    overflow-x: scroll;\n    overflow-y: hidden;\n    white-space: nowrap;\n    border: 2px dotted orange;\n    margin: 10px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFNBQVM7SUFDVCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHNCQUFzQjtBQUMxQjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYix5QkFBeUI7SUFDekIsY0FBYztBQUNsQjtBQUVBO0lBQ0ksY0FBYztJQUNkLFVBQVU7SUFDVixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIseUJBQXlCO0lBQ3pCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqe1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbn1cbmFwcC1uZXctY2l0eSwgYXBwLW5ldy1kYW5nZXJ7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHdpZHRoOiA0MDBweDtcbiAgICBtYXgtaGVpZ2h0OiAzMDBweDtcbiAgICBvdmVyZmxvdy15OiBzY3JvbGw7XG4gICAgcGFkZGluZzogMTBweDtcbiAgICBib3JkZXI6IDJweCBkb3R0ZWQgb3JhbmdlO1xuICAgIG1hcmdpbjogMCAxMHB4O1xufVxuXG5hcHAtc2hvdy1jaXR5LCBhcHAtc2hvdy1kYW5nZXJ7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDk1JTtcbiAgICBtYXgtaGVpZ2h0OiA1MDBweDtcbiAgICBvdmVyZmxvdy14OiBzY3JvbGw7XG4gICAgb3ZlcmZsb3cteTogaGlkZGVuO1xuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gICAgYm9yZGVyOiAycHggZG90dGVkIG9yYW5nZTtcbiAgICBtYXJnaW46IDEwcHggYXV0bztcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    vertical-align: top;\n    box-sizing: border-box;\n}\napp-new-city, app-new-danger, app-edit-city, app-edit-danger{\n    display: inline-block;\n    width: 400px;\n    max-height: 300px;\n    overflow-y: scroll;\n    padding: 10px;\n    border: 2px dotted orange;\n    margin: 0 10px;\n}\napp-show-city, app-show-danger{\n    display: block;\n    width: 95%;\n    max-height: 500px;\n    overflow-x: scroll;\n    overflow-y: hidden;\n    white-space: nowrap;\n    border: 2px dotted orange;\n    margin: 10px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFNBQVM7SUFDVCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHNCQUFzQjtBQUMxQjtBQUNBO0lBQ0kscUJBQXFCO0lBQ3JCLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYix5QkFBeUI7SUFDekIsY0FBYztBQUNsQjtBQUVBO0lBQ0ksY0FBYztJQUNkLFVBQVU7SUFDVixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIseUJBQXlCO0lBQ3pCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqe1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbn1cbmFwcC1uZXctY2l0eSwgYXBwLW5ldy1kYW5nZXIsIGFwcC1lZGl0LWNpdHksIGFwcC1lZGl0LWRhbmdlcntcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgd2lkdGg6IDQwMHB4O1xuICAgIG1heC1oZWlnaHQ6IDMwMHB4O1xuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJvcmRlcjogMnB4IGRvdHRlZCBvcmFuZ2U7XG4gICAgbWFyZ2luOiAwIDEwcHg7XG59XG5cbmFwcC1zaG93LWNpdHksIGFwcC1zaG93LWRhbmdlcntcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICB3aWR0aDogOTUlO1xuICAgIG1heC1oZWlnaHQ6IDUwMHB4O1xuICAgIG92ZXJmbG93LXg6IHNjcm9sbDtcbiAgICBvdmVyZmxvdy15OiBoaWRkZW47XG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICBib3JkZXI6IDJweCBkb3R0ZWQgb3JhbmdlO1xuICAgIG1hcmdpbjogMTBweCBhdXRvO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -426,6 +426,13 @@ let AdminComponent = class AdminComponent {
     }
     updateCities(e) {
         console.log(e);
+    }
+    getEditCity(id) {
+        this.editCityId = id;
+    }
+    changeKey(key) {
+        console.log(key);
+        this.cityKey = key;
     }
 };
 AdminComponent.ctorParameters = () => [
@@ -627,6 +634,9 @@ let CityService = class CityService {
     getAllCities() {
         return this._http.get('/api/cities');
     }
+    getSelectedCities(key) {
+        return this._http.get(`/api/cities/selected/${key}`);
+    }
     getOneCity(id) {
         return this._http.get(`/api/cities/${id}`);
     }
@@ -689,7 +699,7 @@ DangerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VkaXQtY2l0eS9lZGl0LWNpdHkuY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("input{\n    border: 1px solid orange;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZWRpdC1jaXR5L2VkaXQtY2l0eS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksd0JBQXdCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvZWRpdC1jaXR5L2VkaXQtY2l0eS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXR7XG4gICAgYm9yZGVyOiAxcHggc29saWQgb3JhbmdlO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -705,13 +715,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditCityComponent", function() { return EditCityComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _city_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../city.service */ "./src/app/city.service.ts");
+
 
 
 let EditCityComponent = class EditCityComponent {
-    constructor() { }
+    constructor(_cityService) {
+        this._cityService = _cityService;
+    }
     ngOnInit() {
+        this.getEditCity(this.cityId);
+    }
+    ngOnChanges() {
+        this.getEditCity(this.cityId);
+    }
+    getEditCity(id) {
+        const obs = this._cityService.getOneCity(id);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.editCity = data['results'];
+            }
+        });
+    }
+    updateCityToService() {
+        const obs = this._cityService.updateCity(this.editCity);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.editCity = null;
+            }
+        });
     }
 };
+EditCityComponent.ctorParameters = () => [
+    { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], EditCityComponent.prototype, "cityId", void 0);
 EditCityComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-edit-city',
@@ -756,6 +796,9 @@ let EditDangerComponent = class EditDangerComponent {
     ngOnInit() {
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], EditDangerComponent.prototype, "dangerId", void 0);
 EditDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-edit-danger',
@@ -880,8 +923,10 @@ let NewCityComponent = class NewCityComponent {
             imageUrl: '',
             bypass: 0,
             north: 0,
-            south: 0
+            south: 0,
+            listNumber: 0o1
         };
+        console.log(this.newCity.listNumber);
     }
     createCityToService() {
         const obs = this._cityService.createCity(this.newCity);
@@ -893,7 +938,9 @@ let NewCityComponent = class NewCityComponent {
                     imageUrl: '',
                     bypass: 0,
                     north: 0,
-                    south: 0
+                    south: 0,
+                    listNumber: 0,
+                    trip: ''
                 };
                 this.refresh.emit("refresh");
             }
@@ -994,9 +1041,26 @@ __webpack_require__.r(__webpack_exports__);
 let ShowCityComponent = class ShowCityComponent {
     constructor(_cityService) {
         this._cityService = _cityService;
+        this.cityId = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.cityKey = '';
     }
     ngOnInit() {
         this.getAllCitiesFromService();
+        if (this.cityKey == '') {
+            this.getAllCitiesFromService();
+        }
+        else {
+            this.getSelectedTripCitiesFromService(this.cityKey);
+        }
+    }
+    ngOnChanges() {
+        this.getAllCitiesFromService();
+        if (this.cityKey == '') {
+            this.getAllCitiesFromService();
+        }
+        else {
+            this.getSelectedTripCitiesFromService(this.cityKey);
+        }
     }
     getAllCitiesFromService() {
         const obs = this._cityService.getAllCities();
@@ -1006,10 +1070,27 @@ let ShowCityComponent = class ShowCityComponent {
             }
         });
     }
+    getSelectedTripCitiesFromService(key) {
+        const obs = this._cityService.getSelectedCities(key);
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.allCities = data['results'];
+            }
+        });
+    }
+    sendEditId(id) {
+        this.cityId.emit(id);
+    }
 };
 ShowCityComponent.ctorParameters = () => [
     { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], ShowCityComponent.prototype, "cityId", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ShowCityComponent.prototype, "cityKey", void 0);
 ShowCityComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-show-city',

@@ -1,1 +1,41 @@
-<p>edit-city works!</p>
+<div class="bg-light" *ngIf="editCity" >
+
+    <h3>Edit {{editCity.name}}</h3>
+    <form (submit)="updateCityToService()">
+        <div class="form-group">
+            <label>City Name: </label>
+            <input class="form-control" type="text" name="name" [(ngModel)]="editCity.name">
+        </div>
+        <div class="form-group">
+            <label>Description: </label>
+            <textarea class="form-control" name="description" cols="30" rows="5" [(ngModel)]="editCity.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Image Url: </label>
+            <input class="form-control" type="text" name="imageUrl" [(ngModel)]="editCity.imageUrl">
+        </div>
+        <div class="form-group">
+            <label>Bypass: </label>
+            <input class="form-control" type="number" min="0" name="bypass" [(ngModel)]="editCity.bypass">
+        </div>
+        <div class="form-group">
+            <label>North: </label>
+            <input class="form-control" type="number" min="0" name="north" [(ngModel)]="editCity.north">
+        </div>
+        <div class="form-group">
+            <label>South: </label>
+            <input class="form-control" type="number" min="0" name="south" [(ngModel)]="editCity.south">
+        </div>
+        <div class="form-group">
+            <label>List Number: </label>
+            <input class="form-control" type="number" min="0" name="listNumber" [(ngModel)]="editCity.listNumber">
+        </div>
+        <div class="form-group">
+            <label>Trip Name: </label>
+            <input class="form-control" type="text" name="trip" [(ngModel)]="editCity.trip">
+        </div>
+        <div class="form-group">
+            <input class="btn" type="submit" value="Create City">
+        </div>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit-danger',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-danger.component.css']
 })
 export class EditDangerComponent implements OnInit {
+  @Input() dangerId;
 
   constructor() { }
 

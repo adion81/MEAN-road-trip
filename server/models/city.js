@@ -23,7 +23,12 @@ const CitySchema = new mongoose.Schema({
         type: Number
     },
     listNumber: {
-        type: Number
+        type: Number,
+        required: true
+    },
+    trip: {
+        type: String,
+        required: true
     },
     next: {
         type: mongoose.Schema.Types.ObjectId,

@@ -11,6 +11,10 @@ export class CityService {
     return this._http.get('/api/cities');
   }
 
+  getSelectedCities(key){
+    return this._http.get(`/api/cities/selected/${key}`);
+  }
+
   getOneCity(id){
     return this._http.get(`/api/cities/${id}`);
   }

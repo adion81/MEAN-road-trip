@@ -16,6 +16,8 @@ export class AdminComponent implements OnInit {
   answer: string;
   cityForm: boolean = false;
   dangerForm: boolean = false;
+  editCityId: any;
+  cityKey: any;
 
 
   ngOnInit() {
@@ -41,6 +43,13 @@ export class AdminComponent implements OnInit {
 
   updateCities(e){
     console.log(e);
+  }
+  getEditCity(id){
+    this.editCityId = id;
+  }
+  changeKey(key){
+    console.log(key);
+    this.cityKey = key;
   }
 
 

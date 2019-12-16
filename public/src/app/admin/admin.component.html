@@ -3,12 +3,16 @@
     <h2>Welcome Adrien!</h2>
     <button (click)="displayCityForm()">Create City</button>
     <button (click)="displayDangerForm()">Danger Form</button>
+    <button (click)="changeKey('Eastern-Seaboard')">Eastern-Seaboard Trip</button>
+    <button (click)="changeKey('')">Get All Cities</button>
     <div class="forms">
         <app-new-city *ngIf="cityForm" (refresh)="updateCities($event)"></app-new-city>
         <app-new-danger *ngIf="dangerForm"></app-new-danger>
+        <app-edit-city *ngIf="editCityId" [cityId]="editCityId"></app-edit-city>
+        <app-edit-danger *ngIf="editDangerId" [dangerId]="editDangerId"></app-edit-danger>
 
     </div>
-    <app-show-city></app-show-city>
+    <app-show-city (cityId)="getEditCity($event)" [cityKey]="cityKey"></app-show-city>
     <app-show-danger></app-show-danger>
 </div>
 
