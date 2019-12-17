@@ -1,4 +1,4 @@
-const cities = require('../controllers/cities');
+const cities = require('../../controllers/cities');
 
 module.exports = (app) => {
     app.get('/api/cities', (req,res) => cities.index(req,res))

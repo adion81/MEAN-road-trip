@@ -2,7 +2,7 @@
     <div class="city"*ngFor="let city of allCities" >
         <p>{{ city.trip }} || #{{city.listNumber}}</p>
         <h2>{{city.name}}</h2>
-        <img (click)="sendEditId(city._id)" src="../../assets/img/{{city.imageUrl}}" alt={{city.name}}>
+        <img (click)="sendEditId(city._id)" src="../../assets/img/cities/{{city.imageUrl}}" alt={{city.name}}>
         <p>{{city.description}}</p>
         <p>ByPass: {{city.bypass}} miles</p>
         <p>North: {{city.north}} miles</p>

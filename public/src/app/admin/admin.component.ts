@@ -52,5 +52,9 @@ export class AdminComponent implements OnInit {
     this.cityKey = key;
   }
 
+  closeEditCity(e){
+    this.editCityId = null;
+  }
+
 
 }

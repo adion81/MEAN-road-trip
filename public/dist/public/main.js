@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <button (click)=\"changeKey('Eastern-Seaboard')\">Eastern-Seaboard Trip</button>\n    <button (click)=\"changeKey('')\">Get All Cities</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n        <app-edit-city *ngIf=\"editCityId\" [cityId]=\"editCityId\"></app-edit-city>\n        <app-edit-danger *ngIf=\"editDangerId\" [dangerId]=\"editDangerId\"></app-edit-danger>\n\n    </div>\n    <app-show-city (cityId)=\"getEditCity($event)\" [cityKey]=\"cityKey\"></app-show-city>\n    <app-show-danger></app-show-danger>\n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <button (click)=\"changeKey('Eastern-Seaboard')\">Eastern-Seaboard Trip</button>\n    <button (click)=\"changeKey('')\">Get All Cities</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n        <app-edit-city *ngIf=\"editCityId\" [cityId]=\"editCityId\" (close)=\"closeEditCity($event)\"></app-edit-city>\n        <app-edit-danger *ngIf=\"editDangerId\" [dangerId]=\"editDangerId\"></app-edit-danger>\n\n    </div>\n    <app-show-city (cityId)=\"getEditCity($event)\" [cityKey]=\"cityKey\"></app-show-city>\n    <app-show-danger></app-show-danger>\n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" *ngIf=\"editCity\" >\n\n    <h3>Edit {{editCity.name}}</h3>\n    <form (submit)=\"updateCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"editCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"editCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"editCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"editCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"editCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"editCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"editCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"editCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" *ngIf=\"editCity\" >\n    <button (click)=\"closeEdit()\">CLOSE</button>\n\n    <h3>Edit {{editCity.name}}</h3>\n    <form (submit)=\"updateCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"editCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"editCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"editCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"editCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"editCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"editCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"editCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"editCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Edit City\">\n        </div>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New Danger</h3>\n    <form (submit)=\"createDanger()\">\n        <div class=\"form-group\">\n            <label>Class: </label>\n            <select name=\"class\" class=\"form-control\" [(ngModel)]=\"newDanger.class\">\n                <option value=\"city\">City</option>\n                <option value=\"road\">Road</option>\n            </select>\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"newCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"newCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"newCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New Danger</h3>\n    <form (submit)=\"createDanger()\">\n        <div class=\"form-group\">\n            <label>Class: </label>\n            <select name=\"class\" class=\"form-control\" [(ngModel)]=\"newDanger.class\">\n                <option value=\"city\">City</option>\n                <option value=\"road\">Road</option>\n                <option value=\"unique\">Unique</option>\n            </select>\n        </div>\n        <div class=\"form-group\">\n            <label>Name: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"name\" [(ngModel)]=\"newDanger.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newDanger.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Damage: </label>\n            <input class=\"form-control\" type=\"number\" min=\"1\" max=\"10\" name=\"damage\" [(ngModel)]=\"newDanger.damage\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create Danger\">\n        </div>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div  *ngIf=\"allCities\">\n    <div class=\"city\"*ngFor=\"let city of allCities\" >\n        <p>{{ city.trip }} || #{{city.listNumber}}</p>\n        <h2>{{city.name}}</h2>\n        <img (click)=\"sendEditId(city._id)\" src=\"../../assets/img/{{city.imageUrl}}\" alt={{city.name}}>\n        <p>{{city.description}}</p>\n        <p>ByPass: {{city.bypass}} miles</p>\n        <p>North: {{city.north}} miles</p>\n        <p>South: {{city.south}} miles</p>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div  *ngIf=\"allCities\">\n    <div class=\"city\"*ngFor=\"let city of allCities\" >\n        <p>{{ city.trip }} || #{{city.listNumber}}</p>\n        <h2>{{city.name}}</h2>\n        <img (click)=\"sendEditId(city._id)\" src=\"../../assets/img/cities/{{city.imageUrl}}\" alt={{city.name}}>\n        <p>{{city.description}}</p>\n        <p>ByPass: {{city.bypass}} miles</p>\n        <p>North: {{city.north}} miles</p>\n        <p>South: {{city.south}} miles</p>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -434,6 +434,9 @@ let AdminComponent = class AdminComponent {
         console.log(key);
         this.cityKey = key;
     }
+    closeEditCity(e) {
+        this.editCityId = null;
+    }
 };
 AdminComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
@@ -675,11 +678,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DangerService", function() { return DangerService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 let DangerService = class DangerService {
-    constructor() { }
+    constructor(_http) {
+        this._http = _http;
+    }
+    getAllDangers() {
+        return this._http.get('/api/dangers');
+    }
+    getOneDanger() {
+        return this._http.get('/api/dangers/:id');
+    }
+    createDanger(newDanger) {
+        return this._http.post('/api/dangers/create', newDanger);
+    }
+    updateDanger(updateDanger) {
+        return this._http.put(`/api/dangers/update/${updateDanger._id}`, updateDanger);
+    }
+    destroyDanger(id) {
+        return this._http.delete(`/api/dangers/destroy/${id}`);
+    }
 };
+DangerService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
 DangerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
@@ -722,6 +747,7 @@ __webpack_require__.r(__webpack_exports__);
 let EditCityComponent = class EditCityComponent {
     constructor(_cityService) {
         this._cityService = _cityService;
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
         this.getEditCity(this.cityId);
@@ -745,6 +771,9 @@ let EditCityComponent = class EditCityComponent {
             }
         });
     }
+    closeEdit() {
+        this.close.emit(true);
+    }
 };
 EditCityComponent.ctorParameters = () => [
     { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] }
@@ -752,6 +781,9 @@ EditCityComponent.ctorParameters = () => [
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], EditCityComponent.prototype, "cityId", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], EditCityComponent.prototype, "close", void 0);
 EditCityComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-edit-city',
@@ -924,26 +956,26 @@ let NewCityComponent = class NewCityComponent {
             bypass: 0,
             north: 0,
             south: 0,
-            listNumber: 0o1
+            listNumber: 0o1,
+            trip: ''
         };
         console.log(this.newCity.listNumber);
     }
     createCityToService() {
         const obs = this._cityService.createCity(this.newCity);
         obs.subscribe(data => {
-            if (data['results']) {
-                this.newCity = {
-                    name: '',
-                    description: '',
-                    imageUrl: '',
-                    bypass: 0,
-                    north: 0,
-                    south: 0,
-                    listNumber: 0,
-                    trip: ''
-                };
-                this.refresh.emit("refresh");
-            }
+            console.log(data);
+            this.newCity = {
+                name: '',
+                description: '',
+                imageUrl: '',
+                bypass: 0,
+                north: 0,
+                south: 0,
+                listNumber: 0,
+                trip: ''
+            };
+            this.refresh.emit("refresh");
         });
     }
 };
@@ -990,13 +1022,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewDangerComponent", function() { return NewDangerComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _danger_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../danger.service */ "./src/app/danger.service.ts");
+
 
 
 let NewDangerComponent = class NewDangerComponent {
-    constructor() { }
+    constructor(_dangerService) {
+        this._dangerService = _dangerService;
+    }
     ngOnInit() {
+        this.newDanger = {
+            class: '',
+            name: '',
+            description: '',
+            damage: 1
+        };
+    }
+    createDangerToService() {
+        const obs = this._dangerService.createDanger(this.newDanger);
+        obs.subscribe(data => {
+            this.newDanger = {
+                class: '',
+                name: '',
+                description: '',
+                damage: 1
+            };
+        });
     }
 };
+NewDangerComponent.ctorParameters = () => [
+    { type: _danger_service__WEBPACK_IMPORTED_MODULE_2__["DangerService"] }
+];
 NewDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-new-danger',

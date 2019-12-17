@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { CityService } from '../city.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { CityService } from '../city.service';
 })
 export class EditCityComponent implements OnInit,OnChanges {
   @Input() cityId;
+  @Output() close = new EventEmitter();
 
   constructor(
     private _cityService: CityService
@@ -37,6 +38,9 @@ export class EditCityComponent implements OnInit,OnChanges {
         this.editCity = null;
       }
     })
+  }
+  closeEdit(){
+    this.close.emit(true);
   }
 
 }

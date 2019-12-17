@@ -16,6 +16,7 @@ import { ShowDangerComponent } from './show-danger/show-danger.component';
 import { EditCityComponent } from './edit-city/edit-city.component';
 import { EditDangerComponent } from './edit-danger/edit-danger.component';
 import { LandingComponent } from './landing/landing.component';
+import { NewGameComponent } from './new-game/new-game.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LandingComponent } from './landing/landing.component';
     ShowDangerComponent,
     EditCityComponent,
     EditDangerComponent,
-    LandingComponent
+    LandingComponent,
+    NewGameComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,8 @@ const express = require('express'),
 app.use(express.json())
 
 require('./server/config/database')
-require('./server/config/routes')(app)
+require('./server/config/routes/city-routes')(app)
+require('./server/config/routes/danger-routes')(app)
 app.use(express.static(__dirname + '/public/dist/public'));
 
 app.all("*", (req,res,next) => {

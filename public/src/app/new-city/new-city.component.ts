@@ -20,7 +20,8 @@ export class NewCityComponent implements OnInit {
       bypass: 0,
       north: 0,
       south: 0,
-      listNumber: 0o1
+      listNumber: 0o1,
+      trip: ''
     }
     console.log(this.newCity.listNumber)
   }
@@ -28,7 +29,8 @@ export class NewCityComponent implements OnInit {
   createCityToService(){
     const obs = this._cityService.createCity(this.newCity);
     obs.subscribe(data => {
-      if(data['results']){
+      console.log(data);
+      
         this.newCity = {
           name: '',
           description: '',
@@ -41,7 +43,6 @@ export class NewCityComponent implements OnInit {
         }
         
         this.refresh.emit("refresh");
-      }
     })
   }
 

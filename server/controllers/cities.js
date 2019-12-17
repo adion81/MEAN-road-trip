@@ -9,7 +9,9 @@ module.exports = {
     },
     selected: (req,res) => {
         City.find({trip: req.params.cityKey}).sort({listNumber: 1})
-            .then(result => res.json({ results: result}))
+            .then(result => {
+                console.log(result)
+                res.json({ results: result})})
             .catch(err => res.json({errors: err.errors}));
     },
     show: (req, res) => {
@@ -19,7 +21,8 @@ module.exports = {
     },
     create: (req, res) =>{
         City.create(req.body)
-            .then(result => res.json({ results: result }))
+            .then(result => {
+                res.json({ results: result })})
             .catch( err => res.json({errors: err.errors}));
     },
     update: (req, res) => {

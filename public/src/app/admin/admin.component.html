@@ -8,7 +8,7 @@
     <div class="forms">
         <app-new-city *ngIf="cityForm" (refresh)="updateCities($event)"></app-new-city>
         <app-new-danger *ngIf="dangerForm"></app-new-danger>
-        <app-edit-city *ngIf="editCityId" [cityId]="editCityId"></app-edit-city>
+        <app-edit-city *ngIf="editCityId" [cityId]="editCityId" (close)="closeEditCity($event)"></app-edit-city>
         <app-edit-danger *ngIf="editDangerId" [dangerId]="editDangerId"></app-edit-danger>
 
     </div>

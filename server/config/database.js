@@ -1,8 +1,14 @@
+require('dotenv').config();
+
 const mongoose = require('mongoose'),
     path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    uri = process.env.PASS;
 
-mongoose.connect('mongodb://localhost/road-trip', {useNewUrlParser:true, useUnifiedTopology: true})
+
+mongoose.connect(`mongodb+srv://Adrien:${uri}@mean-projects-tojvq.mongodb.net/test?retryWrites=true&w=majority/road-trip`, {useNewUrlParser:true, useUnifiedTopology: true})
+
+// mongoose.connect('mongodb://localhost/road-trip',{ useNewUrlParser:true, useUnifiedTopology:true })
 
 // create a variable that points to the models folder
 var models_path = path.join(__dirname, './../models');

@@ -20,3 +20,5 @@ const DangerSchema = new mongoose.Schema({
         required: [true,"Be descriptive."]
     }
 })
+
+mongoose.model("Danger", DangerSchema);
