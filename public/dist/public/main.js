@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>city works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>{{city.name}}</h1>\n<img src=\"../../assets/img/cities/{{city.imageUrl}}\" alt={{city.name}}>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>game works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-city *ngIf=\"inCity\" [city]=\"currentCity\"></app-city>\n<app-road *ngIf=\"onRoad\" ></app-road>\n");
 
 /***/ }),
 
@@ -814,8 +814,12 @@ __webpack_require__.r(__webpack_exports__);
 let CityComponent = class CityComponent {
     constructor() { }
     ngOnInit() {
+        console.log(this.city);
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], CityComponent.prototype, "city", void 0);
 CityComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-city',
@@ -1117,19 +1121,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+/* harmony import */ var _city_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../city.service */ "./src/app/city.service.ts");
+
 
 
 
 let GameComponent = class GameComponent {
-    constructor(_gameService) {
+    constructor(_gameService, _cityService) {
         this._gameService = _gameService;
+        this._cityService = _cityService;
+        this.inCity = false;
     }
     ngOnInit() {
         console.log(this._gameService.getParty());
+        this.currentCityId = 0;
+        this.getAllCities();
+    }
+    getAllCities() {
+        let obs = this._cityService.getSelectedCities('Eastern-Seaboard');
+        obs.subscribe(data => {
+            if (data['results']) {
+                this.allCities = data['results'];
+                this.getCity(this.currentCityId);
+            }
+        });
+    }
+    getCity(id) {
+        this.currentCity = this.allCities[id];
+        this.inCity = true;
     }
 };
 GameComponent.ctorParameters = () => [
-    { type: _game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] }
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] },
+    { type: _city_service__WEBPACK_IMPORTED_MODULE_3__["CityService"] }
 ];
 GameComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
