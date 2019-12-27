@@ -17,6 +17,12 @@ import { EditCityComponent } from './edit-city/edit-city.component';
 import { EditDangerComponent } from './edit-danger/edit-danger.component';
 import { LandingComponent } from './landing/landing.component';
 import { NewGameComponent } from './new-game/new-game.component';
+import { PartyFormComponent } from './party-form/party-form.component';
+import { OpenScreenComponent } from './open-screen/open-screen.component';
+import { GameComponent } from './game/game.component';
+import { CityComponent } from './city/city.component';
+import { StoreComponent } from './store/store.component';
+import { RoadComponent } from './road/road.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { NewGameComponent } from './new-game/new-game.component';
     EditCityComponent,
     EditDangerComponent,
     LandingComponent,
-    NewGameComponent
+    NewGameComponent,
+    PartyFormComponent,
+    OpenScreenComponent,
+    GameComponent,
+    CityComponent,
+    StoreComponent,
+    RoadComponent
   ],
   imports: [
     BrowserModule,

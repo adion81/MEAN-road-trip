@@ -1,5 +1,6 @@
 <div class="bg-light" *ngIf="editCity" >
     <button (click)="closeEdit()">CLOSE</button>
+    <button (click)="deleteCity(editCity._id)" >DELETE</button>
 
     <h3>Edit {{editCity.name}}</h3>
     <form (submit)="updateCityToService()">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-new-game',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewGameComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _gameService: GameService) { }
+  party: any;
+  switch: Boolean = true;
   ngOnInit() {
+
+  }
+  selectParty(num){
+    this.party = num;
+    this.switch = false;
+  }
+  closeForm(e){
+    this.switch = true;
+    this.party = null;
   }
 
 }

@@ -1,1 +1,18 @@
-<p>new-game works!</p>
+<h1>Please select a vehicle for travel.</h1>
+<div id="newgame">
+    <div class="car">
+        <h4>Option 1: Hooptie</h4>
+        <img (click)="selectParty(1)" src="../../assets/img/hooptie.jpg" alt="Hooptie">
+    </div>
+    <div class="car">
+        <h4>Option 2: Mom's Suv</h4>
+        <img (click)="selectParty(2)" src="../../assets/img/momSuv.jpg" alt="Mom SUV">
+    </div>
+    <div class="car">
+        <h4>Option 3: Party Bus</h4>
+        <img (click)="selectParty(3)" src="../../assets/img/partyBus.jpg" alt="Party Bus">
+    </div>
+</div>
+<div class="party" [ngClass]="{'off': switch}">
+    <app-party-form  class="col-5" *ngIf="party" [partyId]="party"  (closeForm)="closeForm($event)"></app-party-form>
+</div>

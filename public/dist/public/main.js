@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <button (click)=\"changeKey('Eastern-Seaboard')\">Eastern-Seaboard Trip</button>\n    <button (click)=\"changeKey('')\">Get All Cities</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n        <app-edit-city *ngIf=\"editCityId\" [cityId]=\"editCityId\" (close)=\"closeEditCity($event)\"></app-edit-city>\n        <app-edit-danger *ngIf=\"editDangerId\" [dangerId]=\"editDangerId\"></app-edit-danger>\n\n    </div>\n    <app-show-city (cityId)=\"getEditCity($event)\" [cityKey]=\"cityKey\"></app-show-city>\n    <app-show-danger></app-show-danger>\n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div *ngIf=\"loggedIn; else notLoggedIn\">\n    <h2>Welcome Adrien!</h2>\n    <button (click)=\"displayCityForm()\">Create City</button>\n    <button (click)=\"displayDangerForm()\">Danger Form</button>\n    <button (click)=\"changeKey('Eastern-Seaboard')\">Eastern-Seaboard Trip</button>\n    <button (click)=\"changeKey('')\">Get All Cities</button>\n    <div class=\"forms\">\n        <app-new-city *ngIf=\"cityForm\" (refresh)=\"updateCities($event)\"></app-new-city>\n        <app-new-danger *ngIf=\"dangerForm\"></app-new-danger>\n        <app-edit-city *ngIf=\"editCityId\" [cityId]=\"editCityId\" (close)=\"closeEditCity($event)\"></app-edit-city>\n        <app-edit-danger *ngIf=\"editDangerId\" [dangerId]=\"editDangerId\"></app-edit-danger>\n\n    </div>\n    <app-show-city (cityId)=\"getEditCity($event)\" [cityKey]=\"cityKey\"></app-show-city>\n    <app-show-danger></app-show-danger>\n    \n</div>\n\n<ng-template #notLoggedIn >\n    <form (submit)=\"adminLoggin()\">\n        <input type=\"text\" name=\"answer\" [(ngModel)]=\"answer\">\n        <input type=\"submit\" value=\"PUSH\">\n    </form>\n\n</ng-template>\n\n");
 
 /***/ }),
 
@@ -45,7 +45,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>ROAD TRI<span [routerLink]=\"['/secret/admin']\">P</span></h1>\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1><a [routerLink]=\"['/roadtrip']\" routerLinkActive=\"router-link-active\" >ROAD</a> TRI<span [routerLink]=\"['/secret/admin']\">P</span></h1>\n\n<router-outlet></router-outlet>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/city/city.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/city/city.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>city works!</p>\n");
 
 /***/ }),
 
@@ -58,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" *ngIf=\"editCity\" >\n    <button (click)=\"closeEdit()\">CLOSE</button>\n\n    <h3>Edit {{editCity.name}}</h3>\n    <form (submit)=\"updateCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"editCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"editCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"editCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"editCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"editCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"editCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"editCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"editCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Edit City\">\n        </div>\n    </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" *ngIf=\"editCity\" >\n    <button (click)=\"closeEdit()\">CLOSE</button>\n    <button (click)=\"deleteCity(editCity._id)\" >DELETE</button>\n\n    <h3>Edit {{editCity.name}}</h3>\n    <form (submit)=\"updateCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"editCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"editCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"editCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"editCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"editCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"editCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"editCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"editCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Edit City\">\n        </div>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -75,6 +88,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/game/game.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/game/game.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>game works!</p>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/landing/landing.component.html":
 /*!**************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/landing/landing.component.html ***!
@@ -84,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"landing\">\n    <img src=\"../../assets/img/road-trip.jpg\" alt=\"Road Trip\">\n    <button>Click To Play</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"landing\">\n    <img src={{roadtripSrc}} alt=\"Road Trip\">\n    <button class=\"btn \"[routerLink]=\"['/newgame']\" routerLinkActive=\"router-link-active\" >Click To Play</button>\n    <audio src=\"../../assets/audio/2019-12-11_-_Retro_Platforming_-_David_Fesliyan.mp3\" type=\"audio/mpeg\" autoplay loop></audio>\n</div>\n\n\n\n");
 
 /***/ }),
 
@@ -97,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New City</h3>\n    <form (submit)=\"createCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"newCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"newCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"newCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"newCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"newCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"newCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"newCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n    <h3>Create New City</h3>\n    <form (submit)=\"createCityToService()\">\n        <div class=\"form-group\">\n            <label>City Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"newCity.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newCity.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Image Url: </label>\n            <input class=\"form-control\" type=\"text\" name=\"imageUrl\" [(ngModel)]=\"newCity.imageUrl\">\n        </div>\n        <div class=\"form-group\">\n            <label>Bypass: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"bypass\" [(ngModel)]=\"newCity.bypass\">\n        </div>\n        <div class=\"form-group\">\n            <label>North: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"north\" [(ngModel)]=\"newCity.north\">\n        </div>\n        <div class=\"form-group\">\n            <label>South: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"south\" [(ngModel)]=\"newCity.south\">\n        </div>\n        <div class=\"form-group\">\n            <label>List Number: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"listNumber\" [(ngModel)]=\"newCity.listNumber\">\n        </div>\n        <div class=\"form-group\">\n            <label>Trip Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"trip\" [(ngModel)]=\"newCity.trip\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create City\">\n        </div>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -111,6 +137,58 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New Danger</h3>\n    <form (submit)=\"createDanger()\">\n        <div class=\"form-group\">\n            <label>Class: </label>\n            <select name=\"class\" class=\"form-control\" [(ngModel)]=\"newDanger.class\">\n                <option value=\"city\">City</option>\n                <option value=\"road\">Road</option>\n                <option value=\"unique\">Unique</option>\n            </select>\n        </div>\n        <div class=\"form-group\">\n            <label>Name: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"name\" [(ngModel)]=\"newDanger.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newDanger.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Damage: </label>\n            <input class=\"form-control\" type=\"number\" min=\"1\" max=\"10\" name=\"damage\" [(ngModel)]=\"newDanger.damage\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create Danger\">\n        </div>\n    </form>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-game/new-game.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/new-game/new-game.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Please select a vehicle for travel.</h1>\n<div id=\"newgame\">\n    <div class=\"car\">\n        <h4>Option 1: Hooptie</h4>\n        <img (click)=\"selectParty(1)\" src=\"../../assets/img/hooptie.jpg\" alt=\"Hooptie\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 2: Mom's Suv</h4>\n        <img (click)=\"selectParty(2)\" src=\"../../assets/img/momSuv.jpg\" alt=\"Mom SUV\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 3: Party Bus</h4>\n        <img (click)=\"selectParty(3)\" src=\"../../assets/img/partyBus.jpg\" alt=\"Party Bus\">\n    </div>\n</div>\n<div class=\"party\" [ngClass]=\"{'off': switch}\">\n    <app-party-form  class=\"col-5\" *ngIf=\"party\" [partyId]=\"party\"  (closeForm)=\"closeForm($event)\"></app-party-form>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/open-screen/open-screen.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/open-screen/open-screen.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>open-screen works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/party-form/party-form.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/party-form/party-form.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<form (submit)=\"createParty()\">\n    <div class=\"form-group\">\n        <label>Player One: </label>\n        <input class=\"form-control\" type=\"text\" name=\"newParty.playerOne\" [(ngModel)]=\"newParty.playerOne\">\n    </div>\n    <div class=\"form-group\">\n        <label>Player Two: </label>\n        <input class=\"form-control\" type=\"text\" name=\"newParty.playerTwo\" [(ngModel)]=\"newParty.playerTwo\">\n    </div>\n    <div class=\"form-group\">\n        <label>Player Three: </label>\n        <input class=\"form-control\" type=\"text\" name=\"newParty.playerThree\" [(ngModel)]=\"newParty.playerThree\">\n    </div>\n    <div class=\"form-group\">\n        <label>Player Four: </label>\n        <input class=\"form-control\" type=\"text\" name=\"newParty.playerFour\" [(ngModel)]=\"newParty.playerFour\">\n    </div>\n    <div *ngIf=\"partyId == 2 || partyId == 3\">\n        <div class=\"form-group\">\n            <label>Player Five: </label>\n            <input class=\"form-control\" type=\"text\" name=\"newParty.playerFive\" [(ngModel)]=\"newParty.playerFive\">\n        </div>\n        <div class=\"form-group\">\n            <label>Player Six: </label>\n            <input class=\"form-control\" type=\"text\" name=\"newParty.playerSix\" [(ngModel)]=\"newParty.playerSix\">\n        </div>\n        <div class=\"form-group\">\n            <label>Player Seven: </label>\n            <input class=\"form-control\" type=\"text\" name=\"newParty.playerSeven\" [(ngModel)]=\"newParty.playerSeven\">\n        </div>\n        <div *ngIf=\"partyId == 3\" >\n            <div class=\"form-group\">\n                <label>Player Eight: </label>\n                <input class=\"form-control\" type=\"text\" name=\"newParty.playerEight\" [(ngModel)]=\"newParty.playerEight\">\n            </div>\n            <div class=\"form-group\">\n                <label>Player Nine: </label>\n                <input class=\"form-control\" type=\"text\" name=\"newParty.playerNine\" [(ngModel)]=\"newParty.playerNine\">\n            </div>\n            <div class=\"form-group\">\n                <label>Player Ten: </label>\n                <input class=\"form-control\" type=\"text\" name=\"newParty.playerTen\" [(ngModel)]=\"newParty.playerTen\">\n            </div>\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <input class=\"btn btn-outline-warning\" type=\"submit\" value=\"PLAY\">\n        <button class=\"btn btn-outline-warning\"  (click)=\"close()\">CLOSE</button>\n    </div>\n</form>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/road/road.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/road/road.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>road works!</p>\n");
 
 /***/ }),
 
@@ -137,6 +215,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p>show-danger works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/store/store.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/store/store.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>store works!</p>\n");
 
 /***/ }),
 
@@ -468,14 +559,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
 /* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/landing/landing.component.ts");
+/* harmony import */ var _new_game_new_game_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./new-game/new-game.component */ "./src/app/new-game/new-game.component.ts");
+/* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./game/game.component */ "./src/app/game/game.component.ts");
+
+
 
 
 
 
 
 const routes = [
-    { path: '', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_4__["LandingComponent"] },
-    { path: 'secret/admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_3__["AdminComponent"] }
+    { path: 'roadtrip', component: _landing_landing_component__WEBPACK_IMPORTED_MODULE_4__["LandingComponent"] },
+    { path: 'secret/admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_3__["AdminComponent"] },
+    { path: 'newgame', component: _new_game_new_game_component__WEBPACK_IMPORTED_MODULE_5__["NewGameComponent"] },
+    { path: 'game', component: _game_game_component__WEBPACK_IMPORTED_MODULE_6__["GameComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -499,7 +596,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n}\nh1 a {\n    text-decoration: none;\n    color: lime;\n    cursor: default;\n}\nh1{\n    margin: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1QsVUFBVTtBQUNkO0FBQ0E7SUFDSSxxQkFBcUI7SUFDckIsV0FBVztJQUNYLGVBQWU7QUFDbkI7QUFDQTtJQUNJLFNBQVM7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKntcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZzogMDtcbn1cbmgxIGEge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjb2xvcjogbGltZTtcbiAgICBjdXJzb3I6IGRlZmF1bHQ7XG59XG5oMXtcbiAgICBtYXJnaW46IDA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n}\nh1 a {\n    color: lime;\n    cursor: default;\n}\nh1{\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1QsVUFBVTtBQUNkO0FBQ0E7SUFDSSxXQUFXO0lBQ1gsZUFBZTtBQUNuQjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqe1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xufVxuaDEgYSB7XG4gICAgY29sb3I6IGxpbWU7XG4gICAgY3Vyc29yOiBkZWZhdWx0O1xufVxuaDF7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -562,6 +659,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_city_edit_city_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./edit-city/edit-city.component */ "./src/app/edit-city/edit-city.component.ts");
 /* harmony import */ var _edit_danger_edit_danger_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./edit-danger/edit-danger.component */ "./src/app/edit-danger/edit-danger.component.ts");
 /* harmony import */ var _landing_landing_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./landing/landing.component */ "./src/app/landing/landing.component.ts");
+/* harmony import */ var _new_game_new_game_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./new-game/new-game.component */ "./src/app/new-game/new-game.component.ts");
+/* harmony import */ var _party_form_party_form_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./party-form/party-form.component */ "./src/app/party-form/party-form.component.ts");
+/* harmony import */ var _open_screen_open_screen_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./open-screen/open-screen.component */ "./src/app/open-screen/open-screen.component.ts");
+/* harmony import */ var _game_game_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./game/game.component */ "./src/app/game/game.component.ts");
+/* harmony import */ var _city_city_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./city/city.component */ "./src/app/city/city.component.ts");
+/* harmony import */ var _store_store_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./store/store.component */ "./src/app/store/store.component.ts");
+/* harmony import */ var _road_road_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./road/road.component */ "./src/app/road/road.component.ts");
+
+
+
+
+
+
+
 
 
 
@@ -593,7 +704,14 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _show_danger_show_danger_component__WEBPACK_IMPORTED_MODULE_14__["ShowDangerComponent"],
             _edit_city_edit_city_component__WEBPACK_IMPORTED_MODULE_15__["EditCityComponent"],
             _edit_danger_edit_danger_component__WEBPACK_IMPORTED_MODULE_16__["EditDangerComponent"],
-            _landing_landing_component__WEBPACK_IMPORTED_MODULE_17__["LandingComponent"]
+            _landing_landing_component__WEBPACK_IMPORTED_MODULE_17__["LandingComponent"],
+            _new_game_new_game_component__WEBPACK_IMPORTED_MODULE_18__["NewGameComponent"],
+            _party_form_party_form_component__WEBPACK_IMPORTED_MODULE_19__["PartyFormComponent"],
+            _open_screen_open_screen_component__WEBPACK_IMPORTED_MODULE_20__["OpenScreenComponent"],
+            _game_game_component__WEBPACK_IMPORTED_MODULE_21__["GameComponent"],
+            _city_city_component__WEBPACK_IMPORTED_MODULE_22__["CityComponent"],
+            _store_store_component__WEBPACK_IMPORTED_MODULE_23__["StoreComponent"],
+            _road_road_component__WEBPACK_IMPORTED_MODULE_24__["RoadComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -661,6 +779,50 @@ CityService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], CityService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/city/city.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/city/city.component.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NpdHkvY2l0eS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/city/city.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/city/city.component.ts ***!
+  \****************************************/
+/*! exports provided: CityComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CityComponent", function() { return CityComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CityComponent = class CityComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+CityComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-city',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./city.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/city/city.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./city.component.css */ "./src/app/city/city.component.css")).default]
+    })
+], CityComponent);
 
 
 
@@ -741,12 +903,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _city_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../city.service */ "./src/app/city.service.ts");
+/* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+
 
 
 
 let EditCityComponent = class EditCityComponent {
-    constructor(_cityService) {
+    constructor(_cityService, _gameService) {
         this._cityService = _cityService;
+        this._gameService = _gameService;
         this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
@@ -776,7 +941,8 @@ let EditCityComponent = class EditCityComponent {
     }
 };
 EditCityComponent.ctorParameters = () => [
-    { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] }
+    { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] },
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_3__["GameService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -858,13 +1024,120 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let GameService = class GameService {
-    constructor() { }
+    constructor() {
+        this._state = {
+            playing: {
+                vehicle: null,
+                snacks: {
+                    chips: 0,
+                    fruit: 0,
+                    soda: 0,
+                    beefSticks: 0,
+                    nuts: 0,
+                    beer: 0
+                }
+            },
+            vehicles: {
+                hooptie: {
+                    id: 1,
+                    speed: 50,
+                    img: 'hooptie.jpg',
+                    capacity: 4,
+                    passengers: [],
+                    fuel: 0
+                },
+                momSuv: {
+                    id: 2,
+                    speed: 85,
+                    img: 'momSuv.jpg',
+                    capacity: 7,
+                    passengers: [],
+                    fuel: 0
+                },
+                partyBus: {
+                    id: 3,
+                    speed: 65,
+                    img: 'partyBus.jpg',
+                    capacity: 10,
+                    passengers: [],
+                    fuel: 0
+                }
+            }
+        };
+    }
+    createParty(newParty, vehicleId) {
+        for (var key in this._state.vehicles) {
+            if (this._state.vehicles[key].id === vehicleId) {
+                this._state.playing.vehicle = this._state.vehicles[key];
+                for (var player in newParty) {
+                    this._state.playing.vehicle.passengers.push(newParty[player]);
+                }
+                console.log(this._state);
+                return true;
+            }
+        }
+    }
+    getParty() {
+        return this._state.playing;
+    }
 };
 GameService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     })
 ], GameService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/game/game.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/game/game.component.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2dhbWUvZ2FtZS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/game/game.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/game/game.component.ts ***!
+  \****************************************/
+/*! exports provided: GameComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GameComponent", function() { return GameComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+
+
+
+let GameComponent = class GameComponent {
+    constructor(_gameService) {
+        this._gameService = _gameService;
+    }
+    ngOnInit() {
+        console.log(this._gameService.getParty());
+    }
+};
+GameComponent.ctorParameters = () => [
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] }
+];
+GameComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-game',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./game.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/game/game.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./game.component.css */ "./src/app/game/game.component.css")).default]
+    })
+], GameComponent);
 
 
 
@@ -879,7 +1152,7 @@ GameService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#landing{\n    width: 100%;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: 10% 80% 10%;\n    grid-template-rows: 90% 5px 10%;\n}\n\nbutton{\n    width: 150px;\n    padding: 10px;\n    border: 2px solid orange;\n    grid-row: 3;\n    grid-column: 2;\n    margin: 0 auto;\n    \n}\n\nbutton:hover{\n    transition: .3s;\n    border: 2px solid lime;\n    background-color: orange;\n    color: black;\n    border: 2px solid black;\n}\n\nimg{\n    border: 3px solid lime;\n    grid-row:1;\n    grid-column: 2;\n    width: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGFuZGluZy9sYW5kaW5nLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsY0FBYztJQUNkLGFBQWE7SUFDYixrQ0FBa0M7SUFDbEMsK0JBQStCO0FBQ25DOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsV0FBVztJQUNYLGNBQWM7SUFDZCxjQUFjOztBQUVsQjs7QUFDQTtJQUNJLGVBQWU7SUFDZixzQkFBc0I7SUFDdEIsd0JBQXdCO0lBQ3hCLFlBQVk7SUFDWix1QkFBdUI7QUFDM0I7O0FBQ0E7SUFDSSxzQkFBc0I7SUFDdEIsVUFBVTtJQUNWLGNBQWM7SUFDZCxXQUFXO0FBQ2YiLCJmaWxlIjoic3JjL2FwcC9sYW5kaW5nL2xhbmRpbmcuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNsYW5kaW5ne1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxMCUgODAlIDEwJTtcbiAgICBncmlkLXRlbXBsYXRlLXJvd3M6IDkwJSA1cHggMTAlO1xufVxuXG5idXR0b257XG4gICAgd2lkdGg6IDE1MHB4O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgYm9yZGVyOiAycHggc29saWQgb3JhbmdlO1xuICAgIGdyaWQtcm93OiAzO1xuICAgIGdyaWQtY29sdW1uOiAyO1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIFxufVxuYnV0dG9uOmhvdmVye1xuICAgIHRyYW5zaXRpb246IC4zcztcbiAgICBib3JkZXI6IDJweCBzb2xpZCBsaW1lO1xuICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcbiAgICBjb2xvcjogYmxhY2s7XG4gICAgYm9yZGVyOiAycHggc29saWQgYmxhY2s7XG59XG5pbWd7XG4gICAgYm9yZGVyOiAzcHggc29saWQgbGltZTtcbiAgICBncmlkLXJvdzoxO1xuICAgIGdyaWQtY29sdW1uOiAyO1xuICAgIHdpZHRoOiAxMDAlO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("#landing{\n    width: 100%;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: 10% 80% 10%;\n    grid-template-rows: 90% 5px 10%;\n}\n\nbutton{\n    padding: 10px;\n    border: 2px solid orange;\n    grid-row: 3;\n    grid-column: 2;\n    margin: 0 auto;\n    \n}\n\nbutton:hover{\n    transition: .3s;\n    border: 2px solid lime;\n    background-color: orange;\n    color: black;\n    border: 2px solid black;\n}\n\nimg{\n    border: 3px solid lime;\n    grid-row:1;\n    grid-column: 2;\n    width: 100%;\n    -webkit-animation: borderBlink .3s infinite;\n    animation:         borderBlink .3s infinite;\n}\n\n@-webkit-keyframes borderBlink {\n    0%   { border: 3px solid lime; }\n    100% { border: 3px solid orange; }\n}\n\n@keyframes borderBlink {\n0%   { border: 3px solid lime; }\n100% { border: 3px solid orange; }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGFuZGluZy9sYW5kaW5nLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsY0FBYztJQUNkLGFBQWE7SUFDYixrQ0FBa0M7SUFDbEMsK0JBQStCO0FBQ25DOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHdCQUF3QjtJQUN4QixXQUFXO0lBQ1gsY0FBYztJQUNkLGNBQWM7O0FBRWxCOztBQUNBO0lBQ0ksZUFBZTtJQUNmLHNCQUFzQjtJQUN0Qix3QkFBd0I7SUFDeEIsWUFBWTtJQUNaLHVCQUF1QjtBQUMzQjs7QUFDQTtJQUNJLHNCQUFzQjtJQUN0QixVQUFVO0lBQ1YsY0FBYztJQUNkLFdBQVc7SUFDWCwyQ0FBMkM7SUFHM0MsMkNBQTJDO0FBQy9DOztBQUNBO0lBQ0ksT0FBTyxzQkFBc0IsRUFBRTtJQUMvQixPQUFPLHdCQUF3QixFQUFFO0FBQ3JDOztBQVNBO0FBQ0EsT0FBTyxzQkFBc0IsRUFBRTtBQUMvQixPQUFPLHdCQUF3QixFQUFFO0FBQ2pDIiwiZmlsZSI6InNyYy9hcHAvbGFuZGluZy9sYW5kaW5nLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbGFuZGluZ3tcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICBkaXNwbGF5OiBncmlkO1xuICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogMTAlIDgwJSAxMCU7XG4gICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiA5MCUgNXB4IDEwJTtcbn1cblxuYnV0dG9ue1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgYm9yZGVyOiAycHggc29saWQgb3JhbmdlO1xuICAgIGdyaWQtcm93OiAzO1xuICAgIGdyaWQtY29sdW1uOiAyO1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIFxufVxuYnV0dG9uOmhvdmVye1xuICAgIHRyYW5zaXRpb246IC4zcztcbiAgICBib3JkZXI6IDJweCBzb2xpZCBsaW1lO1xuICAgIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcbiAgICBjb2xvcjogYmxhY2s7XG4gICAgYm9yZGVyOiAycHggc29saWQgYmxhY2s7XG59XG5pbWd7XG4gICAgYm9yZGVyOiAzcHggc29saWQgbGltZTtcbiAgICBncmlkLXJvdzoxO1xuICAgIGdyaWQtY29sdW1uOiAyO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIC13ZWJraXQtYW5pbWF0aW9uOiBib3JkZXJCbGluayAuM3MgaW5maW5pdGU7XG4gICAgLW1vei1hbmltYXRpb246ICAgIGJvcmRlckJsaW5rIC4zcyBpbmZpbml0ZTtcbiAgICAtby1hbmltYXRpb246ICAgICAgYm9yZGVyQmxpbmsgLjNzIGluZmluaXRlO1xuICAgIGFuaW1hdGlvbjogICAgICAgICBib3JkZXJCbGluayAuM3MgaW5maW5pdGU7XG59XG5ALXdlYmtpdC1rZXlmcmFtZXMgYm9yZGVyQmxpbmsge1xuICAgIDAlICAgeyBib3JkZXI6IDNweCBzb2xpZCBsaW1lOyB9XG4gICAgMTAwJSB7IGJvcmRlcjogM3B4IHNvbGlkIG9yYW5nZTsgfVxufVxuQC1tb3ota2V5ZnJhbWVzIGJvcmRlckJsaW5rIHtcbjAlICAgeyBib3JkZXI6IDNweCBzb2xpZCBsaW1lOyB9XG4xMDAlIHsgYm9yZGVyOiAzcHggc29saWQgb3JhbmdlOyB9XG59XG5ALW8ta2V5ZnJhbWVzIGJvcmRlckJsaW5rIHtcbjAlICAgeyBib3JkZXI6IDNweCBzb2xpZCBsaW1lOyB9XG4xMDAlIHsgYm9yZGVyOiAzcHggc29saWQgb3JhbmdlOyB9XG59XG5Aa2V5ZnJhbWVzIGJvcmRlckJsaW5rIHtcbjAlICAgeyBib3JkZXI6IDNweCBzb2xpZCBsaW1lOyB9XG4xMDAlIHsgYm9yZGVyOiAzcHggc29saWQgb3JhbmdlOyB9XG59Il19 */");
 
 /***/ }),
 
@@ -900,6 +1173,19 @@ __webpack_require__.r(__webpack_exports__);
 let LandingComponent = class LandingComponent {
     constructor() { }
     ngOnInit() {
+        this.roadtripSrc = '../../assets/img/road-trip-orange.jpg';
+        this.flickerRoadSign();
+        setInterval(() => {
+            this.flickerRoadSign();
+        }, 100);
+    }
+    flickerRoadSign() {
+        if (this.roadtripSrc == '../../assets/img/road-trip.jpg') {
+            this.roadtripSrc = '../../assets/img/road-trip-orange.jpg';
+        }
+        else if (this.roadtripSrc == '../../assets/img/road-trip-orange.jpg') {
+            this.roadtripSrc = '../../assets/img/road-trip.jpg';
+        }
     }
 };
 LandingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -940,12 +1226,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _city_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../city.service */ "./src/app/city.service.ts");
+/* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+
 
 
 
 let NewCityComponent = class NewCityComponent {
-    constructor(_cityService) {
+    constructor(_cityService, _gameService) {
         this._cityService = _cityService;
+        this._gameService = _gameService;
         this.refresh = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() {
@@ -980,7 +1269,8 @@ let NewCityComponent = class NewCityComponent {
     }
 };
 NewCityComponent.ctorParameters = () => [
-    { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] }
+    { type: _city_service__WEBPACK_IMPORTED_MODULE_2__["CityService"] },
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_3__["GameService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
@@ -1060,6 +1350,258 @@ NewDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./new-danger.component.css */ "./src/app/new-danger/new-danger.component.css")).default]
     })
 ], NewDangerComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/new-game/new-game.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/new-game/new-game.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    vertical-align: top;\n    box-sizing: border-box;\n    background-color: black;\n}\n#newgame{\n    display: flex;\n    justify-content: space-evenly;\n}\nh4{\n    text-align: center;\n    margin-top: 5%;\n}\n.car{\n    width: 30%;\n    display: inline-block;\n    border: 2px solid orange;\n    min-height: 275px;\n}\n.car img{\n    width: 90%;\n    display: block;\n    margin: 10% auto;\n}\n.party{\n    width: 400px;\n    position: absolute;\n    top: 40px;\n    left: 30%;\n    background-color: black;\n    padding: 20px;\n    border: 2px solid orange;\n    height: 400px;\n    overflow-y: scroll;\n}\n.off{\n    visibility: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFNBQVM7SUFDVCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0Qix1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLGFBQWE7SUFDYiw2QkFBNkI7QUFDakM7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLHdCQUF3QjtJQUN4QixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLFVBQVU7SUFDVixjQUFjO0lBQ2QsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxTQUFTO0lBQ1QsdUJBQXVCO0lBQ3ZCLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsYUFBYTtJQUNiLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIip7XG4gICAgbWFyZ2luOiAwO1xuICAgIHBhZGRpbmc6IDA7XG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xufVxuI25ld2dhbWV7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn1cbmg0e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiA1JTtcbn1cbi5jYXJ7XG4gICAgd2lkdGg6IDMwJTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgYm9yZGVyOiAycHggc29saWQgb3JhbmdlO1xuICAgIG1pbi1oZWlnaHQ6IDI3NXB4O1xufVxuLmNhciBpbWd7XG4gICAgd2lkdGg6IDkwJTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW46IDEwJSBhdXRvO1xufVxuLnBhcnR5e1xuICAgIHdpZHRoOiA0MDBweDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA0MHB4O1xuICAgIGxlZnQ6IDMwJTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIGJvcmRlcjogMnB4IHNvbGlkIG9yYW5nZTtcbiAgICBoZWlnaHQ6IDQwMHB4O1xuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cbi5vZmZ7XG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/new-game/new-game.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/new-game/new-game.component.ts ***!
+  \************************************************/
+/*! exports provided: NewGameComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewGameComponent", function() { return NewGameComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+
+
+
+let NewGameComponent = class NewGameComponent {
+    constructor(_gameService) {
+        this._gameService = _gameService;
+        this.switch = true;
+    }
+    ngOnInit() {
+    }
+    selectParty(num) {
+        this.party = num;
+        this.switch = false;
+    }
+    closeForm(e) {
+        this.switch = true;
+        this.party = null;
+    }
+};
+NewGameComponent.ctorParameters = () => [
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] }
+];
+NewGameComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-new-game',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./new-game.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-game/new-game.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./new-game.component.css */ "./src/app/new-game/new-game.component.css")).default]
+    })
+], NewGameComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/open-screen/open-screen.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/open-screen/open-screen.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29wZW4tc2NyZWVuL29wZW4tc2NyZWVuLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/open-screen/open-screen.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/open-screen/open-screen.component.ts ***!
+  \******************************************************/
+/*! exports provided: OpenScreenComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OpenScreenComponent", function() { return OpenScreenComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let OpenScreenComponent = class OpenScreenComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+OpenScreenComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-open-screen',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./open-screen.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/open-screen/open-screen.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./open-screen.component.css */ "./src/app/open-screen/open-screen.component.css")).default]
+    })
+], OpenScreenComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/party-form/party-form.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/party-form/party-form.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("input, button{\n    border: 1px solid orange;\n}\nbutton{\n    margin-left: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFydHktZm9ybS9wYXJ0eS1mb3JtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx3QkFBd0I7QUFDNUI7QUFDQTtJQUNJLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL3BhcnR5LWZvcm0vcGFydHktZm9ybS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXQsIGJ1dHRvbntcbiAgICBib3JkZXI6IDFweCBzb2xpZCBvcmFuZ2U7XG59XG5idXR0b257XG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/party-form/party-form.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/party-form/party-form.component.ts ***!
+  \****************************************************/
+/*! exports provided: PartyFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PartyFormComponent", function() { return PartyFormComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _game_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../game.service */ "./src/app/game.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let PartyFormComponent = class PartyFormComponent {
+    constructor(_gameService, _router) {
+        this._gameService = _gameService;
+        this._router = _router;
+        this.closeForm = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    ngOnInit() {
+        if (this.partyId == 1) {
+            this.newParty = {
+                playerOne: '',
+                playerTwo: '',
+                playerThree: '',
+                playerFour: ''
+            };
+        }
+        else if (this.partyId == 2) {
+            this.newParty = {
+                playerOne: '',
+                playerTwo: '',
+                playerThree: '',
+                playerFour: '',
+                playerFive: '',
+                playerSix: '',
+                playerSeven: ''
+            };
+        }
+        else if (this.partyId == 3) {
+            this.newParty = {
+                playerOne: '',
+                playerTwo: '',
+                playerThree: '',
+                playerFour: '',
+                playerFive: '',
+                playerSix: '',
+                playerSeven: '',
+                playerEight: '',
+                playerNine: '',
+                playerTen: ''
+            };
+        }
+    }
+    createParty() {
+        let submit = this._gameService.createParty(this.newParty, this.partyId);
+        if (submit === true) {
+            this._router.navigate(['/game']);
+        }
+    }
+    close() {
+        this.closeForm.emit(true);
+    }
+};
+PartyFormComponent.ctorParameters = () => [
+    { type: _game_service__WEBPACK_IMPORTED_MODULE_2__["GameService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PartyFormComponent.prototype, "partyId", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], PartyFormComponent.prototype, "closeForm", void 0);
+PartyFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-party-form',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./party-form.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/party-form/party-form.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./party-form.component.css */ "./src/app/party-form/party-form.component.css")).default]
+    })
+], PartyFormComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/road/road.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/road/road.component.css ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JvYWQvcm9hZC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/road/road.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/road/road.component.ts ***!
+  \****************************************/
+/*! exports provided: RoadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoadComponent", function() { return RoadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RoadComponent = class RoadComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+RoadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-road',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./road.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/road/road.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./road.component.css */ "./src/app/road/road.component.css")).default]
+    })
+], RoadComponent);
 
 
 
@@ -1198,6 +1740,50 @@ ShowDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./show-danger.component.css */ "./src/app/show-danger/show-danger.component.css")).default]
     })
 ], ShowDangerComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/store/store.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/store/store.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N0b3JlL3N0b3JlLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/store/store.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/store/store.component.ts ***!
+  \******************************************/
+/*! exports provided: StoreComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreComponent", function() { return StoreComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let StoreComponent = class StoreComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+StoreComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-store',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./store.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/store/store.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./store.component.css */ "./src/app/store/store.component.css")).default]
+    })
+], StoreComponent);
 
 
 

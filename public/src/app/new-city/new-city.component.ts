@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CityService } from '../city.service';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-new-city',
@@ -9,7 +10,8 @@ import { CityService } from '../city.service';
 export class NewCityComponent implements OnInit {
   @Output() refresh = new EventEmitter();
   constructor(
-    private _cityService: CityService
+    private _cityService: CityService,
+    private _gameService: GameService
   ) { }
   newCity: any;
   ngOnInit() {

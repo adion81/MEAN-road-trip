@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    background-color: black;
+}
+#newgame{
+    display: flex;
+    justify-content: space-evenly;
+}
+h4{
+    text-align: center;
+    margin-top: 5%;
+}
+.car{
+    width: 30%;
+    display: inline-block;
+    border: 2px solid orange;
+    min-height: 275px;
+}
+.car img{
+    width: 90%;
+    display: block;
+    margin: 10% auto;
+}
+.party{
+    width: 400px;
+    position: absolute;
+    top: 40px;
+    left: 30%;
+    background-color: black;
+    padding: 20px;
+    border: 2px solid orange;
+    height: 400px;
+    overflow-y: scroll;
+}
+.off{
+    visibility: hidden;
+}

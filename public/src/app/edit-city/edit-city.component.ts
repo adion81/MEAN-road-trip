@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 import { CityService } from '../city.service';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-edit-city',
@@ -11,7 +12,8 @@ export class EditCityComponent implements OnInit,OnChanges {
   @Output() close = new EventEmitter();
 
   constructor(
-    private _cityService: CityService
+    private _cityService: CityService,
+    private _gameService: GameService
   ) { }
   editCity: any;
   ngOnInit() {
