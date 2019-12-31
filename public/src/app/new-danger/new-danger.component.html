@@ -1,7 +1,7 @@
 <div class="bg-light" >
 
     <h3>Create New Danger</h3>
-    <form (submit)="createDanger()">
+    <form (submit)="createDangerToService()">
         <div class="form-group">
             <label>Class: </label>
             <select name="class" class="form-control" [(ngModel)]="newDanger.class">
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label>Name: </label>
-            <input class="form-control" type="number" min="0" name="name" [(ngModel)]="newDanger.name">
+            <input class="form-control" type="text" name="name" [(ngModel)]="newDanger.name">
         </div>
         <div class="form-group">
             <label>Description: </label>

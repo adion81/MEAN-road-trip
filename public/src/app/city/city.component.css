@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.city{
+    width: 80%;
+    margin: 10px auto;
+    background-color: black;
+}
+h1{
+    text-align: center;
+}
+
+

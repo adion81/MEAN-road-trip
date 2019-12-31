@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>{{city.name}}</h1>\n<img src=\"../../assets/img/cities/{{city.imageUrl}}\" alt={{city.name}}>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"city\">\n    <h1>{{city.name}}</h1>\n    <img src=\"../../assets/img/cities/{{city.imageUrl}}\" alt={{city.name}}>\n    <p>{{city.description}}</p>\n</div>\n<div>\n    <h3>Decisions: </h3>\n    <ol>\n        <li>1. - <button>Hit the road.</button></li>\n        <li>2. - <button>Go to store.</button></li>\n        <li>3. - <button>Explore city.</button></li>\n    </ol>\n\n</div>\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New Danger</h3>\n    <form (submit)=\"createDanger()\">\n        <div class=\"form-group\">\n            <label>Class: </label>\n            <select name=\"class\" class=\"form-control\" [(ngModel)]=\"newDanger.class\">\n                <option value=\"city\">City</option>\n                <option value=\"road\">Road</option>\n                <option value=\"unique\">Unique</option>\n            </select>\n        </div>\n        <div class=\"form-group\">\n            <label>Name: </label>\n            <input class=\"form-control\" type=\"number\" min=\"0\" name=\"name\" [(ngModel)]=\"newDanger.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newDanger.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Damage: </label>\n            <input class=\"form-control\" type=\"number\" min=\"1\" max=\"10\" name=\"damage\" [(ngModel)]=\"newDanger.damage\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create Danger\">\n        </div>\n    </form>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"bg-light\" >\n\n    <h3>Create New Danger</h3>\n    <form (submit)=\"createDangerToService()\">\n        <div class=\"form-group\">\n            <label>Class: </label>\n            <select name=\"class\" class=\"form-control\" [(ngModel)]=\"newDanger.class\">\n                <option value=\"city\">City</option>\n                <option value=\"road\">Road</option>\n                <option value=\"unique\">Unique</option>\n            </select>\n        </div>\n        <div class=\"form-group\">\n            <label>Name: </label>\n            <input class=\"form-control\" type=\"text\" name=\"name\" [(ngModel)]=\"newDanger.name\">\n        </div>\n        <div class=\"form-group\">\n            <label>Description: </label>\n            <textarea class=\"form-control\" name=\"description\" cols=\"30\" rows=\"5\" [(ngModel)]=\"newDanger.description\"></textarea>\n        </div>\n        <div class=\"form-group\">\n            <label>Damage: </label>\n            <input class=\"form-control\" type=\"number\" min=\"1\" max=\"10\" name=\"damage\" [(ngModel)]=\"newDanger.damage\">\n        </div>\n        <div class=\"form-group\">\n            <input class=\"btn\" type=\"submit\" value=\"Create Danger\">\n        </div>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Please select a vehicle for travel.</h1>\n<div id=\"newgame\">\n    <div class=\"car\">\n        <h4>Option 1: Hooptie</h4>\n        <img (click)=\"selectParty(1)\" src=\"../../assets/img/hooptie.jpg\" alt=\"Hooptie\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 2: Mom's Suv</h4>\n        <img (click)=\"selectParty(2)\" src=\"../../assets/img/momSuv.jpg\" alt=\"Mom SUV\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 3: Party Bus</h4>\n        <img (click)=\"selectParty(3)\" src=\"../../assets/img/partyBus.jpg\" alt=\"Party Bus\">\n    </div>\n</div>\n<div class=\"party\" [ngClass]=\"{'off': switch}\">\n    <app-party-form  class=\"col-5\" *ngIf=\"party\" [partyId]=\"party\"  (closeForm)=\"closeForm($event)\"></app-party-form>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>{{instructions}}</h1>\n<div id=\"newgame\">\n    <div class=\"car\">\n        <h4>Option 1: Hooptie</h4>\n        <img (click)=\"selectParty(1)\" src=\"../../assets/img/hooptie.jpg\" alt=\"Hooptie\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 2: Mom's Suv</h4>\n        <img (click)=\"selectParty(2)\" src=\"../../assets/img/momSuv.jpg\" alt=\"Mom SUV\">\n    </div>\n    <div class=\"car\">\n        <h4>Option 3: Party Bus</h4>\n        <img (click)=\"selectParty(3)\" src=\"../../assets/img/partyBus.jpg\" alt=\"Party Bus\">\n    </div>\n</div>\n<div class=\"party\" [ngClass]=\"{'off': switch}\">\n    <app-party-form  class=\"col-5\" *ngIf=\"party\" [partyId]=\"party\"  (closeForm)=\"closeForm($event)\"></app-party-form>\n</div>");
 
 /***/ }),
 
@@ -793,7 +793,7 @@ CityService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NpdHkvY2l0eS5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    background-color: black;\n}\n.city{\n    width: 80%;\n    margin: 10px auto;\n    background-color: black;\n}\nh1{\n    text-align: center;\n}\n\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2l0eS9jaXR5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxTQUFTO0lBQ1QsVUFBVTtJQUNWLHVCQUF1QjtBQUMzQjtBQUNBO0lBQ0ksVUFBVTtJQUNWLGlCQUFpQjtJQUNqQix1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL2NpdHkvY2l0eS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKntcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZzogMDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbn1cbi5jaXR5e1xuICAgIHdpZHRoOiA4MCU7XG4gICAgbWFyZ2luOiAxMHB4IGF1dG87XG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XG59XG5oMXtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cblxuIl19 */");
 
 /***/ }),
 
@@ -859,6 +859,7 @@ let DangerService = class DangerService {
         return this._http.get('/api/dangers/:id');
     }
     createDanger(newDanger) {
+        console.log(newDanger);
         return this._http.post('/api/dangers/create', newDanger);
     }
     updateDanger(updateDanger) {
@@ -1353,6 +1354,7 @@ let NewDangerComponent = class NewDangerComponent {
         };
     }
     createDangerToService() {
+        console.log(this.newDanger);
         const obs = this._dangerService.createDanger(this.newDanger);
         obs.subscribe(data => {
             this.newDanger = {
@@ -1388,7 +1390,7 @@ NewDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    vertical-align: top;\n    box-sizing: border-box;\n    background-color: black;\n}\n#newgame{\n    display: flex;\n    justify-content: space-evenly;\n}\nh4{\n    text-align: center;\n    margin-top: 5%;\n}\n.car{\n    width: 30%;\n    display: inline-block;\n    border: 2px solid orange;\n    min-height: 275px;\n}\n.car img{\n    width: 90%;\n    display: block;\n    margin: 10% auto;\n}\n.party{\n    width: 400px;\n    position: absolute;\n    top: 40px;\n    left: 30%;\n    background-color: black;\n    padding: 20px;\n    border: 2px solid orange;\n    height: 400px;\n    overflow-y: scroll;\n}\n.off{\n    visibility: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFNBQVM7SUFDVCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0Qix1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLGFBQWE7SUFDYiw2QkFBNkI7QUFDakM7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YscUJBQXFCO0lBQ3JCLHdCQUF3QjtJQUN4QixpQkFBaUI7QUFDckI7QUFDQTtJQUNJLFVBQVU7SUFDVixjQUFjO0lBQ2QsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLFNBQVM7SUFDVCxTQUFTO0lBQ1QsdUJBQXVCO0lBQ3ZCLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsYUFBYTtJQUNiLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIip7XG4gICAgbWFyZ2luOiAwO1xuICAgIHBhZGRpbmc6IDA7XG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xufVxuI25ld2dhbWV7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn1cbmg0e1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiA1JTtcbn1cbi5jYXJ7XG4gICAgd2lkdGg6IDMwJTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgYm9yZGVyOiAycHggc29saWQgb3JhbmdlO1xuICAgIG1pbi1oZWlnaHQ6IDI3NXB4O1xufVxuLmNhciBpbWd7XG4gICAgd2lkdGg6IDkwJTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW46IDEwJSBhdXRvO1xufVxuLnBhcnR5e1xuICAgIHdpZHRoOiA0MDBweDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA0MHB4O1xuICAgIGxlZnQ6IDMwJTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIGJvcmRlcjogMnB4IHNvbGlkIG9yYW5nZTtcbiAgICBoZWlnaHQ6IDQwMHB4O1xuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cbi5vZmZ7XG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("*{\n    margin: 0;\n    padding: 0;\n    vertical-align: top;\n    box-sizing: border-box;\n    background-color: black;\n}\n#newgame{\n    margin: 0 auto;\n}\nh4{\n    text-align: center;\n    margin-top: 5%;\n}\n.car{\n    width: 90%;\n    display: block;\n    margin: 0 auto;\n    border: 2px solid orange;\n}\n.car img{\n    width: 90%;\n    display: block;\n    margin: 10% auto;\n}\n.party{\n    width: 90%;\n    position: fixed;\n    top: 80px;\n    left: 5%;\n    background-color: black;\n    padding: 20px;\n    border: 2px solid orange;\n    height: 400px;\n    overflow-y: scroll;\n}\nh1{\n    text-align: center;\n}\n.off{\n    visibility: hidden;\n}\n@media only screen and (min-width: 768px){\n    #newgame{\n        display: flex;\n        justify-content: space-around;\n    }\n    .car{\n        display: inline-block;\n        width: 30%;\n    }\n    .party{\n        width: 40%;\n        left: 30%;\n    }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFNBQVM7SUFDVCxVQUFVO0lBQ1YsbUJBQW1CO0lBQ25CLHNCQUFzQjtJQUN0Qix1QkFBdUI7QUFDM0I7QUFDQTtJQUNJLGNBQWM7QUFDbEI7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixjQUFjO0FBQ2xCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YsY0FBYztJQUNkLGNBQWM7SUFDZCx3QkFBd0I7QUFDNUI7QUFDQTtJQUNJLFVBQVU7SUFDVixjQUFjO0lBQ2QsZ0JBQWdCO0FBQ3BCO0FBQ0E7SUFDSSxVQUFVO0lBQ1YsZUFBZTtJQUNmLFNBQVM7SUFDVCxRQUFRO0lBQ1IsdUJBQXVCO0lBQ3ZCLGFBQWE7SUFDYix3QkFBd0I7SUFDeEIsYUFBYTtJQUNiLGtCQUFrQjtBQUN0QjtBQUNBO0lBQ0ksa0JBQWtCO0FBQ3RCO0FBQ0E7SUFDSSxrQkFBa0I7QUFDdEI7QUFFQTtJQUNJO1FBQ0ksYUFBYTtRQUNiLDZCQUE2QjtJQUNqQztJQUNBO1FBQ0kscUJBQXFCO1FBQ3JCLFVBQVU7SUFDZDtJQUNBO1FBQ0ksVUFBVTtRQUNWLFNBQVM7SUFDYjtBQUNKIiwiZmlsZSI6InNyYy9hcHAvbmV3LWdhbWUvbmV3LWdhbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIip7XG4gICAgbWFyZ2luOiAwO1xuICAgIHBhZGRpbmc6IDA7XG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xufVxuI25ld2dhbWV7XG4gICAgbWFyZ2luOiAwIGF1dG87XG59XG5oNHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogNSU7XG59XG4uY2Fye1xuICAgIHdpZHRoOiA5MCU7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgYm9yZGVyOiAycHggc29saWQgb3JhbmdlO1xufVxuLmNhciBpbWd7XG4gICAgd2lkdGg6IDkwJTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW46IDEwJSBhdXRvO1xufVxuLnBhcnR5e1xuICAgIHdpZHRoOiA5MCU7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogODBweDtcbiAgICBsZWZ0OiA1JTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBibGFjaztcbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIGJvcmRlcjogMnB4IHNvbGlkIG9yYW5nZTtcbiAgICBoZWlnaHQ6IDQwMHB4O1xuICAgIG92ZXJmbG93LXk6IHNjcm9sbDtcbn1cbmgxe1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5vZmZ7XG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDc2OHB4KXtcbiAgICAjbmV3Z2FtZXtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XG4gICAgfVxuICAgIC5jYXJ7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgd2lkdGg6IDMwJTtcbiAgICB9XG4gICAgLnBhcnR5e1xuICAgICAgICB3aWR0aDogNDAlO1xuICAgICAgICBsZWZ0OiAzMCU7XG4gICAgfVxufVxuIl19 */");
 
 /***/ }),
 
@@ -1414,14 +1416,17 @@ let NewGameComponent = class NewGameComponent {
         this.switch = true;
     }
     ngOnInit() {
+        this.instructions = "Please select a vehicle for travel.";
     }
     selectParty(num) {
         this.party = num;
         this.switch = false;
+        this.instructions = "Please enter the names of your friends.";
     }
     closeForm(e) {
         this.switch = true;
         this.party = null;
+        this.instructions = "Please select a vehicle for travel.";
     }
 };
 NewGameComponent.ctorParameters = () => [
@@ -1750,13 +1755,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShowDangerComponent", function() { return ShowDangerComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _danger_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../danger.service */ "./src/app/danger.service.ts");
+
 
 
 let ShowDangerComponent = class ShowDangerComponent {
-    constructor() { }
+    constructor(_dangerService) {
+        this._dangerService = _dangerService;
+    }
     ngOnInit() {
     }
+    getAllDangers() {
+        const obs = this._dangerService.getAllDangers();
+        obs.subscribe(data => {
+            if (data['results']) {
+            }
+        });
+    }
 };
+ShowDangerComponent.ctorParameters = () => [
+    { type: _danger_service__WEBPACK_IMPORTED_MODULE_2__["DangerService"] }
+];
 ShowDangerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-show-danger',

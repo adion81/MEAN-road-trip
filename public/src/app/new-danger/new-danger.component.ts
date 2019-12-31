@@ -20,6 +20,7 @@ export class NewDangerComponent implements OnInit {
   }
 
   createDangerToService(){
+    console.log(this.newDanger);
     const obs = this._dangerService.createDanger(this.newDanger);
 
     obs.subscribe(data => {

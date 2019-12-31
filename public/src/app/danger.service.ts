@@ -17,6 +17,7 @@ export class DangerService {
   }
 
   createDanger(newDanger){
+    console.log(newDanger);
     return this._http.post('/api/dangers/create',newDanger);
   }
 
